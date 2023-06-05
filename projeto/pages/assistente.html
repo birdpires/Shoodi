@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente</title>
+</head>
+<body>
+  <h1>
+    
+    <script src="{% static 'assistente.js'%}"></script>
+
+    <style>
+        /* Estilos CSS opcionais para formatar a aparência do chatbot */
+       .chatbox {
+          border: 1px solid #ccc;
+          border-radius: 30px;
+          background-color: aliceblue;
+          width: 35%;
+          margin-top: 20px;
+          height: 150px;
+          overflow-y: scroll;
+        
+          font-size: medium;
+          display: inline-block;
+        }
+
+       .assistente{
+        background-color: red;
+        text-align: center;
+       }
+       img{
+        width: 200px;
+        height: 250px;
+        display: inline-block;
+       }
+      </style>
+
+    <section class="assistente">
+     <img src="{% static 'components/assets/logo.png'%}">
+     <div class="chatbox" id="chatbox"></div>
+        <input type="text" id="pergunta" placeholder="Escreva um Produto">
+        <button onclick="enviarPergunta('')">Enviar</button>  </p>
+    </section> 
+    
+  </h1>
+</body>
+</html>

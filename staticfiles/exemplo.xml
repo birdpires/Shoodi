@@ -1,0 +1,6 @@
+<food_burguer bairro =  "Centro" cidade = "Maceió">
+    <secao>Pizza</secao>
+    <secao>Burguer</secao>
+    <secao>Bebidas</secao>
+    <secao>Sobremesas</secao>
+</food_burguer>
