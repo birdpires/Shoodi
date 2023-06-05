@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to left, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000, #ff0000);
+    background-color: #FFBA08;
 }
 
 

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e-p(nx24x8wavd6*syw6ui1bm3)296p9_xiy9$eokmiy$x1=v1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "*"
@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,11 +127,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ############# AJUSTE #############
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "projeto/static"),
-    # '/var/www/static/',
-)

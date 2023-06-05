@@ -8,36 +8,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shoodi</title>
     <link rel="stylesheet" href="{% static 'components/styles/index.css'%}">
+    <script src="https://kit.fontawesome.com/3aa80303c9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="{% static 'index.js'%}"></script>
 </head>
 
 <header>
-        <div id="logo">Shoodi</div>
-        <!--<h1><a href="../login">Faça o login</a> </h1>-->
-      <div>
-        <div class="search">
-          <div class="search-bar" id="search_bar">
-            <input type="text" placeholder="Pesquise no Shoodi...">
-          </div>
-          <a href="#" id="search_btn" onclick="search_bar_anim()">
-            <div class="search-icon">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="cart">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <p>0</p>
-        </div>
-      </div>
-</header>
-
 <body>
-    <script src="{% static 'index.js'%}"></script>
-    <section class="main">
+    <div id="logo">Shoodi</div>
+    <!--<h1><a href="../login">Faça o login</a> </h1>-->
+  <div>
+    <div class="search">
+      <div class="search-bar" id="search_bar">
+        <input type="text" placeholder="Pesquise no Shoodi...">
+      </div>
+      <a href="#" id="search_btn" onclick="search_bar_anim()">
+        <div class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div>
+    <div class="cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <p>0</p>
+    </div>
+  </div>
+
+  <section class="main">
+    <a href="#" id="chat-icon" onclick="abrirChat()">
+        <i class="fa-regular fa-circle-question"></i>
+    </a>
+
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <h2>Chat</h2>
+            
+            <div class="duvida" id="duvida">
+                <input type="text" id="pergunta" placeholder="Digite aqui dua duvida...">
+                <div id="search-results"></div>
+                <i class="fa-solid fa-magnifying-glass" onclick="enviarPergunta('')"></i>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="chat-icon" onclick="abrirModal()">
+        <i class="fa-regular fa-circle-question"></i>
+    </a>        
+</section>
+</header>
         <div class="main-content">
             <section class="branco">
                 random line
@@ -93,50 +114,19 @@
     <hr>
 
     <section id="news">
-        <div class="direito"><a class="pag" href="../index">Hamb&uacute;rguers</a></div><div class="esquerdo"> <a class="pag" href="#">Combos</a></div>
+        <div class="direito"><a class="pag" href="#">Hamb&uacute;rguers</a></div><div class="esquerdo"> <a class="pag" href="../combo">Combos</a></div>
         <section class="um">
             <div class="news-tiles">
                 <article class="news-tile">
                     <div class="food-tile">
-                        <img src="{% static 'components/assets/slide1.jpg'%}" alt="Hamb 1" width="500">
+                        <img src="{% static 'components/assets/img.cadastro.jpg'%}" alt="Hamb 1" width="500">
                         <div class="food-tile-container">
                         <div class="food-tile-container-info">
-                            <h4>Chegou o novo Double Spice!</h4>
-                            <p>Eita que suculência! É muita gostosura para só um hamburguer!</p>
+                            <h4>Chegou o novo Apetitoso&#33;</h4>
+                            <p>Um delicioso hamburguer de Frango especial&#33;</p>
                         </div>
                         <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
-                        </div>
-                      </div>
-                    </div>
-                </article>
-              <article class="news-tile">
-                <div class="food-tile">
-                    <img src="{% static 'components/assets/slide2.jpg'%}" alt="Hamb 1" width="500">
-                    <div class="food-tile-container">
-                        <div class="food-tile-container-info">
-                            <h4>Confira agora o nosso Big Rusty!</h4>
-                            <p>Um toque mais selvagem! Você vai se deliciar!</p>
-                        </div>
-                        <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
-                        </div>
-                    </div>
-                </div>
-              </article>
-        </section>
-        <section class="um">
-            <div class="news-tiles">
-                <article class="news-tile">
-                    <div class="food-tile">
-                        <img src="{% static 'components/assets/slide3.jpg'%}" alt="Hamb 1" width="500">
-                        <div class="food-tile-container">
-                        <div class="food-tile-container-info">
-                            <h4>Chegou o novo Double Spice!</h4>
-                            <p>Eita que suculência! É muita gostosura para só um hamburguer!</p>
-                        </div>
-                        <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
+                            <a href="../login">Partiu</a>
                         </div>
                       </div>
                     </div>
@@ -146,11 +136,42 @@
                     <img src="{% static 'components/assets/hamb2.jpg'%}" alt="Hamb 1" width="500">
                     <div class="food-tile-container">
                         <div class="food-tile-container-info">
-                            <h4>Confira agora o nosso Big Rusty!</h4>
-                            <p>Um toque mais selvagem! Você vai se deliciar!</p>
+                            <h4>Confira agora o nosso Saboroso&#33;</h4>
+                            <p>Um sabor extremamente especial&#33;</p>
                         </div>
                         <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
+                            <a href="../login">Partiu</a>
+                        </div>
+                    </div>
+                </div>
+              </article>
+        </section>
+        <section class="um">
+            <div class="news-tiles">
+                <article class="news-tile">
+                    <div class="food-tile">
+                        <img src="{% static 'components/assets/slide1.jpg'%}" alt="Hamb 1" width="500">
+                        <div class="food-tile-container">
+                        <div class="food-tile-container-info">
+                            <h4>Confira o famoso Larica</h4>
+                            <p>Para quando aquela fome bater...</p>
+                        </div>
+                        <div class="food-tile-container-action">
+                            <a href="../login">Partiu</a>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+              <article class="news-tile">
+                <div class="food-tile">
+                    <img src="{% static 'components/assets/slide2.jpg'%}" alt="Hamb 1" width="500">
+                    <div class="food-tile-container">
+                        <div class="food-tile-container-info">
+                            <h4>Se apaixone pelo Apaixonado</h4>
+                            <p>Um toque de amor no seu hamburguer</p>
+                        </div>
+                        <div class="food-tile-container-action">
+                            <a href="../login">Partiu</a>
                         </div>
                     </div>
                 </div>
@@ -161,28 +182,28 @@
             <div class="news-tiles">
                 <article class="news-tile">
                     <div class="food-tile">
-                        <img src="{% static 'components/assets/img.cadastro.jpg'%}" alt="Hamb 1" width="500">
+                        <img src="{% static 'components/assets/slide5.jpg'%}" alt="Hamb 1" width="500">
                         <div class="food-tile-container">
                         <div class="food-tile-container-info">
-                            <h4>Chegou o novo Double Spice!</h4>
-                            <p>Eita que suculência! É muita gostosura para só um hamburguer!</p>
+                            <h4>Vamos provar o Suculento</h4>
+                            <p>&Eacute; muita gostosura para s&oacute; um hamburguer!</p>
                         </div>
                         <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
+                            <a href="../login">Partiu</a>
                         </div>
                       </div>
                     </div>
                 </article>
               <article class="news-tile">
                 <div class="food-tile">
-                    <img src="{% static 'components/assets/hamb2.jpg'%}" alt="Hamb 1" width="500">
+                    <img src="{% static 'components/assets/slide4.jpg'%}" alt="Hamb 1" width="500">
                     <div class="food-tile-container">
                         <div class="food-tile-container-info">
-                            <h4>Confira agora o nosso Big Rusty!</h4>
-                            <p>Um toque mais selvagem! Você vai se deliciar!</p>
+                            <h4>Confira agora o nosso Solteir&atilde;o</h4>
+                            <p>Quem t&aacute; sozinho tamb&eacute;m tem fome</p>
                         </div>
                         <div class="food-tile-container-action">
-                            <a href="#">Partiu!</a>
+                            <a href="../login">Partiu</a>
                         </div>
                     </div>
                 </div>

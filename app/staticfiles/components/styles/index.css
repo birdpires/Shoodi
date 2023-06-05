@@ -46,7 +46,7 @@ header {
     align-items: center;
 }
 
-#chat-icon {
+/* #chat-icon {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -55,11 +55,29 @@ header {
   height: 50px;
   background-color: var(--light-blue);
   border-radius: 50%;
-  display: flex;
+  display: inline;
   justify-content: center;
   align-items: center;
-  color: var(--white);
+  color: black;
   font-size: 24px;
+}*/
+
+.chatbox {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background-color: aliceblue;
+  width: 35%;
+  margin-top: 20px;
+  height: 150px;
+  overflow-y: scroll;
+
+  font-size: medium;
+  display: inline-block;
+}
+
+.assistente{
+background-color: red;
+text-align: center;
 }
 
 .modal {

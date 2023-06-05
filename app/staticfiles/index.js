@@ -22,7 +22,7 @@ const perguntasRespostas = [
 { Produto: 'Envergonhado', resposta: 'O'},
 { Produto: 'Casal', resposta: 'O'},
 { Produto: 'Solteiro', resposta: 'O'},
-{ Produto: 'Larica', resposta: 'O'},
+{ Produto: 'Larica', resposta: 'Bateu a fome no meio da mdru?... Vem nesse que é sucesso!'},
 { Produto: 'Faminto', resposta: 'O'},
 ];
 
